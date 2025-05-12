@@ -1,0 +1,27 @@
+[workspace]
+members = [
+    "programs/*",
+    "client",
+    "anchor/avm",
+    "anchor/cli",
+    "anchor/client",
+    "anchor/lang",
+    "anchor/lang/attribute/*",
+    "anchor/lang/derive/*",
+    "anchor/lang/syn",
+    "anchor/spl",
+]
+exclude = [
+    "anchor/tests/swap/deps/openbook-dex",
+    "anchor/tests/cfo/deps/openbook-dex",
+]
+
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1

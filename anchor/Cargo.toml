@@ -1,0 +1,7 @@
+[profile.release]
+lto = true
+
+[profile.release.package.anchor-cli]
+codegen-units = 1
+
+
