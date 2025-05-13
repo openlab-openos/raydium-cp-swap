@@ -2,8 +2,8 @@ import {
   MAX_FEE_BASIS_POINTS,
   ONE_IN_BASIS_POINTS,
   TOKEN_PROGRAM_ID,
-} from "@solana/spl-token";
-import { PublicKey } from "@solana/web3.js";
+} from "open-token-web3";
+import { PublicKey} from "openverse-web3";
 
 export function calculateFee(
   transferFeeConfig: { transferFeeBasisPoints: number; MaxFee: number },

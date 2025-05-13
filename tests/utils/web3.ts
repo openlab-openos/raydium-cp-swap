@@ -6,7 +6,7 @@ import {
   TransactionInstruction,
   TransactionSignature,
   ConfirmOptions,
-} from "@solana/web3.js";
+} from "openverse-web3";
 
 export async function accountExist(
   connection: anchor.web3.Connection,

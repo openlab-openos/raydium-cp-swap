@@ -9,7 +9,7 @@ import {
   SystemProgram,
   Transaction,
   sendAndConfirmTransaction,
-} from "@solana/web3.js";
+} from "openverse-web3";
 import {
   createMint,
   TOKEN_PROGRAM_ID,
@@ -22,7 +22,7 @@ import {
   createInitializeTransferFeeConfigInstruction,
   createInitializeMintInstruction,
   getAccount,
-} from "@solana/spl-token";
+} from "open-token-web3";
 import { sendTransaction } from "./index";
 
 // create a token mint and a token2022 mint with transferFeeConfig

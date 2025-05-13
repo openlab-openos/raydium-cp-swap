@@ -9,7 +9,7 @@ import {
   setupDepositTest,
 } from "./utils";
 import { assert } from "chai";
-import { MAX_FEE_BASIS_POINTS, TOKEN_PROGRAM_ID } from "@solana/spl-token";
+import { MAX_FEE_BASIS_POINTS, TOKEN_PROGRAM_ID } from "open-token-web3";
 
 describe("deposit test", () => {
   anchor.setProvider(anchor.AnchorProvider.env());

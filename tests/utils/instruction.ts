@@ -1,4 +1,4 @@
-import { Program, BN } from "@coral-xyz/anchor";
+import { Program, BN ,setProvider} from "@coral-xyz/anchor";
 import { RaydiumCpSwap } from "../../target/types/raydium_cp_swap";
 import {
   Connection,
@@ -8,12 +8,13 @@ import {
   Signer,
   SystemProgram,
   SYSVAR_RENT_PUBKEY,
-} from "@solana/web3.js";
+} from "openverse-web3";
 import {
   TOKEN_PROGRAM_ID,
   TOKEN_2022_PROGRAM_ID,
+  ASSOCIATED_TOKEN_PROGRAM_ID,
   getAssociatedTokenAddressSync,
-} from "@solana/spl-token";
+} from "open-token-web3";
 import {
   accountExist,
   sendTransaction,
@@ -26,7 +27,6 @@ import {
   getOrcleAccountAddress,
 } from "./index";
 
-import { ASSOCIATED_PROGRAM_ID } from "@coral-xyz/anchor/dist/cjs/utils/token";
 
 export async function setupInitializeTest(
   program: Program<RaydiumCpSwap>,
@@ -296,7 +296,7 @@ export async function initialize(
       TOKEN_PROGRAM_ID.toBuffer(),
       lpMintAddress.toBuffer(),
     ],
-    ASSOCIATED_PROGRAM_ID
+    ASSOCIATED_TOKEN_PROGRAM_ID
   );
 
   const [observationAddress] = await getOrcleAccountAddress(
@@ -385,7 +385,7 @@ export async function deposit(
       TOKEN_PROGRAM_ID.toBuffer(),
       lpMintAddress.toBuffer(),
     ],
-    ASSOCIATED_PROGRAM_ID
+    ASSOCIATED_TOKEN_PROGRAM_ID
   );
 
   const onwerToken0 = getAssociatedTokenAddressSync(
@@ -463,7 +463,7 @@ export async function withdraw(
       TOKEN_PROGRAM_ID.toBuffer(),
       lpMintAddress.toBuffer(),
     ],
-    ASSOCIATED_PROGRAM_ID
+    ASSOCIATED_TOKEN_PROGRAM_ID
   );
 
   const onwerToken0 = getAssociatedTokenAddressSync(
