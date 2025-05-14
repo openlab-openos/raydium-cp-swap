@@ -9,7 +9,7 @@ import {
   SystemProgram,
   Transaction,
   sendAndConfirmTransaction,
-} from "openverse-web3";
+} from "@solana/web3.js";
 import {
   createMint,
   TOKEN_PROGRAM_ID,
@@ -23,6 +23,8 @@ import {
   createInitializeMintInstruction,
   getAccount,
 } from "open-token-web3";
+
+import { Connection as SolanaConnection } from "@solana/web3.js";
 import { sendTransaction } from "./index";
 
 // create a token mint and a token2022 mint with transferFeeConfig
@@ -49,7 +51,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
 
   let tokenArray: Token[] = [];
   let token0 = await createMint(
-    connection,
+    connection as unknown as SolanaConnection,
     mintAuthority,
     mintAuthority.publicKey,
     null,
@@ -98,7 +100,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   const token1Program = tokenArray[1].program;
 
   const ownerToken0Account = await getOrCreateAssociatedTokenAccount(
-    connection,
+    connection as unknown as SolanaConnection,
     payer,
     token0,
     payer.publicKey,
@@ -109,7 +111,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   );
 
   await mintTo(
-    connection,
+    connection as unknown as SolanaConnection,
     payer,
     token0,
     ownerToken0Account.address,
@@ -126,7 +128,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   // );
 
   const ownerToken1Account = await getOrCreateAssociatedTokenAccount(
-    connection,
+    connection as unknown as SolanaConnection,
     payer,
     token1,
     payer.publicKey,
@@ -140,7 +142,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   //   ownerToken1Account.address.toString()
   // );
   await mintTo(
-    connection,
+    connection as unknown as SolanaConnection,
     payer,
     token1,
     ownerToken1Account.address,

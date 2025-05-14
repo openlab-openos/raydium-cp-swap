@@ -6,10 +6,10 @@ import {
   TransactionInstruction,
   TransactionSignature,
   ConfirmOptions,
-} from "openverse-web3";
+} from "@solana/web3.js";
 
 export async function accountExist(
-  connection: anchor.web3.Connection,
+  connection: Connection,
   account: anchor.web3.PublicKey
 ) {
   const info = await connection.getAccountInfo(account);

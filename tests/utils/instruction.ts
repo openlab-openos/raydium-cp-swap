@@ -8,7 +8,7 @@ import {
   Signer,
   SystemProgram,
   SYSVAR_RENT_PUBKEY,
-} from "openverse-web3";
+} from "@solana/web3.js";
 import {
   TOKEN_PROGRAM_ID,
   TOKEN_2022_PROGRAM_ID,

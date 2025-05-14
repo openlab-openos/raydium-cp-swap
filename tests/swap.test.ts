@@ -3,7 +3,7 @@ import { Program, BN } from "@coral-xyz/anchor";
 import { RaydiumCpSwap } from "../target/types/raydium_cp_swap";
 import { setupSwapTest, swap_base_input, swap_base_output } from "./utils";
 import { assert } from "chai";
-import { getAccount, getAssociatedTokenAddressSync } from "@solana/spl-token";
+import { getAccount, getAssociatedTokenAddressSync } from "open-token-web3";
 
 describe("swap test", () => {
   anchor.setProvider(anchor.AnchorProvider.env());
