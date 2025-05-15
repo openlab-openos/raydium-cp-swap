@@ -24,7 +24,6 @@ import {
   getAccount,
 } from "open-token-web3";
 
-import { Connection as SolanaConnection } from "@solana/web3.js";
 import { sendTransaction } from "./index";
 
 // create a token mint and a token2022 mint with transferFeeConfig
@@ -51,7 +50,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
 
   let tokenArray: Token[] = [];
   let token0 = await createMint(
-    connection as unknown as SolanaConnection,
+    connection,
     mintAuthority,
     mintAuthority.publicKey,
     null,
@@ -100,7 +99,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   const token1Program = tokenArray[1].program;
 
   const ownerToken0Account = await getOrCreateAssociatedTokenAccount(
-    connection as unknown as SolanaConnection,
+    connection,
     payer,
     token0,
     payer.publicKey,
@@ -111,7 +110,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   );
 
   await mintTo(
-    connection as unknown as SolanaConnection,
+    connection,
     payer,
     token0,
     ownerToken0Account.address,
@@ -128,7 +127,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   // );
 
   const ownerToken1Account = await getOrCreateAssociatedTokenAccount(
-    connection as unknown as SolanaConnection,
+    connection,
     payer,
     token1,
     payer.publicKey,
@@ -142,7 +141,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
   //   ownerToken1Account.address.toString()
   // );
   await mintTo(
-    connection as unknown as SolanaConnection,
+    connection,
     payer,
     token1,
     ownerToken1Account.address,

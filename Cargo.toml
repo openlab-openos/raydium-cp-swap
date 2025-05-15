@@ -12,8 +12,7 @@ members = [
     "anchor/spl",
 ]
 exclude = [
-    "anchor/tests/swap/deps/openbook-dex",
-    "anchor/tests/cfo/deps/openbook-dex",
+    "anchor/tests",
 ]
 
 

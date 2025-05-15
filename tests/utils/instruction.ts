@@ -267,7 +267,7 @@ export async function initialize(
     initAmount0: new BN(10000000000),
     initAmount1: new BN(20000000000),
   },
-  createPoolFee = new PublicKey("DNXgeM9EiiaAbaWvwjHj9fQQLAX5ZsfHyvmYUNRAdNC8")
+  createPoolFee = new PublicKey("4eGTvfGud4SMGbgPocbL3RDYy2gk2wb46mLE85XPUeKj")
 ) {
   const [auth] = await getAuthAddress(program.programId);
   const [poolAddress] = await getPoolAddress(

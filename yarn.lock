@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.23.4", "@babel/runtime@^7.25.0":
+"@babel/runtime@^7.25.0":
   version "7.27.1"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.27.1.tgz"
   integrity sha512-1x3D2xEk2fRo3PAhwQwu5UubzgiVWSXTBfWpVd2Mx2AzRqJuDJCsgaDVZ7HB5iGzDW1Hl1sWN2mFyKjmR9uAog==
@@ -35,14 +35,14 @@
     bn.js "^5.1.2"
     buffer-layout "^1.2.0"
 
-"@noble/curves@^1.2.0", "@noble/curves@^1.4.2":
+"@noble/curves@^1.4.2":
   version "1.9.0"
   resolved "https://registry.npmjs.org/@noble/curves/-/curves-1.9.0.tgz"
   integrity sha512-7YDlXiNMdO1YZeH6t/kvopHHbIZzlxrCV9WLqCY6QhcXOoXiNCMDqJIglZ9Yjx5+w7Dz30TITFrlTjnRg7sKEg==
   dependencies:
     "@noble/hashes" "1.8.0"
 
-"@noble/hashes@^1.3.1", "@noble/hashes@^1.3.2", "@noble/hashes@^1.4.0", "@noble/hashes@1.8.0":
+"@noble/hashes@^1.3.1", "@noble/hashes@^1.4.0", "@noble/hashes@1.8.0":
   version "1.8.0"
   resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-1.8.0.tgz"
   integrity sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==
@@ -757,7 +757,7 @@ isomorphic-ws@^4.0.1:
   resolved "https://registry.npmjs.org/isomorphic-ws/-/isomorphic-ws-4.0.1.tgz"
   integrity sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w==
 
-jayson@^4.1.0, jayson@^4.1.1:
+jayson@^4.1.1:
   version "4.2.0"
   resolved "https://registry.npmjs.org/jayson/-/jayson-4.2.0.tgz"
   integrity sha512-VfJ9t1YLwacIubLhONk0KFeosUBwstRWQ0IRT1KDjEjnVnSOVHC3uwugyV7L0c7R9lpVyrUGT2XWiBA1UTtpyg==
@@ -931,36 +931,36 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-open-token-web3@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.npmjs.org/open-token-web3/-/open-token-web3-0.4.3.tgz"
-  integrity sha512-Ss7wgpreNO/cck/pRkbP5UfRaKNeecVjU1/yAPzWegF5c1IoMXLe/k9gdyxKDYdHNEzbSiHzui6iajrXVaW/hg==
+open-token-web3@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.npmjs.org/open-token-web3/-/open-token-web3-0.4.4.tgz"
+  integrity sha512-AuQvBw1Yd/VB7dpq4R7OTZCmyaaIrFj17sHu1gsCWXmhkdE/6rSLZha1zPx77zx+rLHopK+AFdqpWcAUnJTbTg==
   dependencies:
     "@solana/buffer-layout" "^4.0.0"
     "@solana/buffer-layout-utils" "^0.2.0"
     "@solana/spl-token-metadata" "^0.1.2"
     buffer "^6.0.3"
 
-openverse-web3@^1.89.2:
-  version "1.89.2"
-  resolved "https://registry.npmjs.org/openverse-web3/-/openverse-web3-1.89.2.tgz"
-  integrity sha512-lQFFFre0GyhRWlPaT+onQDOAuecU+Xmob2qO7FAYHbvcJXgMSzxUee9WRN7E62UY8nMzKFHH1/h+KREmM2xBig==
+openverse-web3@^1.98.2:
+  version "1.98.2"
+  resolved "https://registry.npmjs.org/openverse-web3/-/openverse-web3-1.98.2.tgz"
+  integrity sha512-nB4UH7HCXGYL4aB2as0sDR0JpWoHfA0J/MMNytTOhBr9D1tjoaUw1549bna/1rDDX8rlcnCnP96O25x/Nn3xrQ==
   dependencies:
-    "@babel/runtime" "^7.23.4"
-    "@noble/curves" "^1.2.0"
-    "@noble/hashes" "^1.3.2"
+    "@babel/runtime" "^7.25.0"
+    "@noble/curves" "^1.4.2"
+    "@noble/hashes" "^1.4.0"
     "@solana/buffer-layout" "^4.0.1"
+    "@solana/codecs-numbers" "^2.1.0"
     agentkeepalive "^4.5.0"
-    bigint-buffer "^1.1.5"
     bn.js "^5.2.1"
     borsh "^0.7.0"
     bs58 "^4.0.1"
     buffer "6.0.3"
     fast-stable-stringify "^1.0.0"
-    jayson "^4.1.0"
+    jayson "^4.1.1"
     node-fetch "^2.7.0"
-    rpc-websockets "^7.5.1"
-    superstruct "^0.14.2"
+    rpc-websockets "^9.0.2"
+    superstruct "^2.0.2"
 
 p-limit@^3.0.2:
   version "3.1.0"
@@ -1025,12 +1025,16 @@ require-directory@^2.1.1:
   resolved "https://registry.npmjs.org/require-directory/-/require-directory-2.1.1.tgz"
   integrity sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==
 
-rpc-websockets@^7.5.1:
-  version "7.11.2"
-  resolved "https://registry.npmjs.org/rpc-websockets/-/rpc-websockets-7.11.2.tgz"
-  integrity sha512-pL9r5N6AVHlMN/vT98+fcO+5+/UcPLf/4tq+WUaid/PPUGS/ttJ3y8e9IqmaWKtShNAysMSjkczuEA49NuV7UQ==
+rpc-websockets@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.npmjs.org/rpc-websockets/-/rpc-websockets-10.0.0.tgz"
+  integrity sha512-ci68pI2x0TZdrRbpFx8oiBosNUKR1a2Y9kADVwwhX6UUq+B1E9oqNXnxq20WvTwR7+3Dsow1qAtU8pPGoZE4sw==
   dependencies:
-    eventemitter3 "^4.0.7"
+    "@swc/helpers" "^0.5.11"
+    "@types/uuid" "^8.3.4"
+    "@types/ws" "^8.2.2"
+    buffer "^6.0.3"
+    eventemitter3 "^5.0.1"
     uuid "^8.3.2"
     ws "^8.5.0"
   optionalDependencies:
@@ -1123,11 +1127,6 @@ strip-json-comments@3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
-
-superstruct@^0.14.2:
-  version "0.14.2"
-  resolved "https://registry.npmjs.org/superstruct/-/superstruct-0.14.2.tgz"
-  integrity sha512-nPewA6m9mR3d6k7WkZ8N8zpTWfenFH3q9pA2PkuiZxINr9DKB2+40wEQf0ixn8VaGuJ78AB6iWOtStI+/4FKZQ==
 
 superstruct@^0.15.4:
   version "0.15.5"
