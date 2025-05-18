@@ -10,8 +10,8 @@ use anchor_lang::{
 };
 use anchor_spl::{
     associated_token::AssociatedToken,
-    token::Token,
     token_2022::spl_token_2022,
+    token_2022::Token2022,
     token_interface::{Mint, TokenAccount, TokenInterface},
 };
 use std::ops::Deref;
@@ -146,7 +146,7 @@ pub struct Initialize<'info> {
     pub observation_state: AccountLoader<'info, ObservationState>,
 
     /// Program to create mint account and mint tokens
-    pub token_program: Program<'info, Token>,
+    pub token_program: Program<'info, Token2022>,
     /// Spl token program or token program 2022
     pub token_0_program: Interface<'info, TokenInterface>,
     /// Spl token program or token program 2022
