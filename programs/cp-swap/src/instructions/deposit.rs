@@ -4,7 +4,6 @@ use crate::error::ErrorCode;
 use crate::states::*;
 use crate::utils::token::*;
 use anchor_lang::prelude::*;
-use anchor_spl::token::Token;
 use anchor_spl::token_interface::{Mint, Token2022, TokenAccount};
 
 #[derive(Accounts)]
@@ -59,7 +58,7 @@ pub struct Deposit<'info> {
     pub token_1_vault: Box<InterfaceAccount<'info, TokenAccount>>,
 
     /// token Program
-    pub token_program: Program<'info, Token>,
+    pub token_program: Program<'info, Token2022>,
 
     /// Token program 2022
     pub token_program_2022: Program<'info, Token2022>,

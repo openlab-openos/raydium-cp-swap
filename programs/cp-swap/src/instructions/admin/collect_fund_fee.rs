@@ -2,7 +2,6 @@ use crate::error::ErrorCode;
 use crate::states::*;
 use crate::utils::token::*;
 use anchor_lang::prelude::*;
-use anchor_spl::token::Token;
 use anchor_spl::token_interface::Mint;
 use anchor_spl::token_interface::Token2022;
 use anchor_spl::token_interface::TokenAccount;
@@ -64,7 +63,7 @@ pub struct CollectFundFee<'info> {
     pub recipient_token_1_account: Box<InterfaceAccount<'info, TokenAccount>>,
 
     /// The SPL program to perform token transfers
-    pub token_program: Program<'info, Token>,
+    pub token_program: Program<'info, Token2022>,
 
     /// The SPL program 2022 to perform token transfers
     pub token_program_2022: Program<'info, Token2022>,
