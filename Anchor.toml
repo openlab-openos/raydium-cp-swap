@@ -22,7 +22,7 @@ cluster = "Localnet"
 wallet = "~/.config/openos/id.json"
 
 [scripts]
-test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/initialize.test.ts"
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/withdraw.test.ts"
 
 [test]
 startup_wait = 10000

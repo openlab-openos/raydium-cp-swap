@@ -9,6 +9,7 @@ import {
   SystemProgram,
   Transaction,
   sendAndConfirmTransaction,
+  ConfirmOptions
 } from "@solana/web3.js";
 import {
   createMint,
@@ -24,6 +25,7 @@ import {
 } from "open-token-web3";
 
 import { sendTransaction } from "./index";
+import { program } from "@coral-xyz/anchor/dist/cjs/native/system";
 
 // create a token mint and a token2022 mint with transferFeeConfig
 export async function createTokenMintAndAssociatedTokenAccount(
@@ -53,7 +55,12 @@ export async function createTokenMintAndAssociatedTokenAccount(
     mintAuthority,
     mintAuthority.publicKey,
     null,
-    9
+    9,
+    new Keypair(),
+    {
+      skipPreflight: true,
+    },
+    TOKEN_2022_PROGRAM_ID
   );
   tokenArray.push({ address: token0, program: TOKEN_2022_PROGRAM_ID });
 

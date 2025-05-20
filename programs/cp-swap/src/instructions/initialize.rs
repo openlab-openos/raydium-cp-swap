@@ -302,7 +302,7 @@ pub fn initialize(
             ],
         )?;
         invoke(
-            &spl_token::instruction::sync_native(
+            &spl_token_2022::instruction::sync_native(
                 ctx.accounts.token_program.key,
                 &ctx.accounts.create_pool_fee.key(),
             )?,

@@ -116,7 +116,8 @@ export async function setupDepositTest(
         new Keypair(),
         transferFeeConfig
       );
-
+    
+    console.log("token0: ", token0.toString(), " token1: ", token1.toString());
     if (tokenProgramRequired != undefined) {
       if (
         token0Program.equals(tokenProgramRequired.token0Program) &&
@@ -232,7 +233,7 @@ export async function createAmmConfig(
   if (await accountExist(connection, address)) {
     return address;
   }
-
+  console.log("create amm config ",address.toString())
   const ix = await program.methods
     .createAmmConfig(
       config_index,
@@ -266,7 +267,7 @@ export async function initialize(
     initAmount0: new BN(10000000000),
     initAmount1: new BN(20000000000),
   },
-  createPoolFee = new PublicKey("4eGTvfGud4SMGbgPocbL3RDYy2gk2wb46mLE85XPUeKj")
+  createPoolFee = new PublicKey("J6MTdMzp1A58ceHwHjtn2AmfuQDPcedkku4aNhuT9Evn")
 ) {
   const [auth] = await getAuthAddress(program.programId);
   const [poolAddress] = await getPoolAddress(
@@ -315,7 +316,7 @@ export async function initialize(
     false,
     token1Program
   );
-  await program.methods
+  const tx = await program.methods
     .initialize(initAmount.initAmount0, initAmount.initAmount1, new BN(0))
     .accounts({
       creator: creator.publicKey,
@@ -335,6 +336,7 @@ export async function initialize(
       tokenProgram: TOKEN_2022_PROGRAM_ID,
       token0Program: token0Program,
       token1Program: token1Program,
+      associatedTokenProgram:  ASSOCIATED_TOKEN_PROGRAM_ID,
       systemProgram: SystemProgram.programId,
       rent: SYSVAR_RENT_PUBKEY,
     })

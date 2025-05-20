@@ -35,9 +35,9 @@ pub mod admin {
 pub mod create_pool_fee_reveiver {
     use anchor_lang::prelude::declare_id;
     #[cfg(feature = "devnet")]
-    declare_id!("4eGTvfGud4SMGbgPocbL3RDYy2gk2wb46mLE85XPUeKj");
+    declare_id!("J6MTdMzp1A58ceHwHjtn2AmfuQDPcedkku4aNhuT9Evn");
     #[cfg(not(feature = "devnet"))]
-    declare_id!("4eGTvfGud4SMGbgPocbL3RDYy2gk2wb46mLE85XPUeKj");
+    declare_id!("J6MTdMzp1A58ceHwHjtn2AmfuQDPcedkku4aNhuT9Evn");
 }
 
 pub const AUTH_SEED: &str = "vault_and_lp_mint_auth_seed";

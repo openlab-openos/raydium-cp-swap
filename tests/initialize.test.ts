@@ -64,52 +64,52 @@ describe("initialize test", () => {
     assert.equal(vault1.amount.toString(), initAmount1.toString());
   });
 
-  // it("create pool with fee", async () => {
-  //   const { configAddress, token0, token0Program, token1, token1Program } =
-  //     await setupInitializeTest(
-  //       program,
-  //       anchor.getProvider().connection,
-  //       owner,
-  //       {
-  //         config_index: 0,
-  //         tradeFeeRate: new BN(10),
-  //         protocolFeeRate: new BN(1000),
-  //         fundFeeRate: new BN(25000),
-  //         create_fee: new BN(100000000),
-  //       },
-  //       { transferFeeBasisPoints: 0, MaxFee: 0 },
-  //       confirmOptions
-  //     );
+  it("create pool with fee", async () => {
+    const { configAddress, token0, token0Program, token1, token1Program } =
+      await setupInitializeTest(
+        program,
+        anchor.getProvider().connection,
+        owner,
+        {
+          config_index: 2,
+          tradeFeeRate: new BN(10),
+          protocolFeeRate: new BN(1000),
+          fundFeeRate: new BN(25000),
+          create_fee: new BN(100000000),
+        },
+        { transferFeeBasisPoints: 0, MaxFee: 0 },
+        confirmOptions
+      );
 
-  //   const initAmount0 = new BN(10000000000);
-  //   const initAmount1 = new BN(10000000000);
-  //   const { poolAddress, poolState } = await initialize(
-  //     program,
-  //     owner,
-  //     configAddress,
-  //     token0,
-  //     token0Program,
-  //     token1,
-  //     token1Program,
-  //     confirmOptions,
-  //     { initAmount0, initAmount1 }
-  //   );
-  //   let vault0 = await getAccount(
-  //     anchor.getProvider().connection,
-  //     poolState.token0Vault,
-  //     "processed",
-  //     poolState.token0Program
-  //   );
-  //   assert.equal(vault0.amount.toString(), initAmount0.toString());
+    const initAmount0 = new BN(10000000000);
+    const initAmount1 = new BN(10000000000);
+    const { poolAddress, poolState } = await initialize(
+      program,
+      owner,
+      configAddress,
+      token0,
+      token0Program,
+      token1,
+      token1Program,
+      confirmOptions,
+      { initAmount0, initAmount1 }
+    );
+    let vault0 = await getAccount(
+      anchor.getProvider().connection,
+      poolState.token0Vault,
+      "processed",
+      poolState.token0Program
+    );
+    assert.equal(vault0.amount.toString(), initAmount0.toString());
 
-  //   let vault1 = await getAccount(
-  //     anchor.getProvider().connection,
-  //     poolState.token1Vault,
-  //     "processed",
-  //     poolState.token1Program
-  //   );
-  //   assert.equal(vault1.amount.toString(), initAmount1.toString());
-  // });
+    let vault1 = await getAccount(
+      anchor.getProvider().connection,
+      poolState.token1Vault,
+      "processed",
+      poolState.token1Program
+    );
+    assert.equal(vault1.amount.toString(), initAmount1.toString());
+  });
 
   // it("create pool with token2022 mint has transfer fee", async () => {
   //   const transferFeeConfig = { transferFeeBasisPoints: 100, MaxFee: 50000000 }; // %10
