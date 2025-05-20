@@ -12,7 +12,6 @@ import {
 } from "@solana/web3.js";
 import {
   createMint,
-  TOKEN_PROGRAM_ID,
   getOrCreateAssociatedTokenAccount,
   mintTo,
   TOKEN_2022_PROGRAM_ID,
@@ -56,7 +55,7 @@ export async function createTokenMintAndAssociatedTokenAccount(
     null,
     9
   );
-  tokenArray.push({ address: token0, program: TOKEN_PROGRAM_ID });
+  tokenArray.push({ address: token0, program: TOKEN_2022_PROGRAM_ID });
 
   let token1 = await createMintWithTransferFee(
     connection,

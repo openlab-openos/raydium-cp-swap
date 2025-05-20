@@ -10,7 +10,6 @@ import {
   SYSVAR_RENT_PUBKEY,
 } from "@solana/web3.js";
 import {
-  TOKEN_PROGRAM_ID,
   TOKEN_2022_PROGRAM_ID,
   ASSOCIATED_TOKEN_PROGRAM_ID,
   getAssociatedTokenAddressSync,
@@ -293,7 +292,7 @@ export async function initialize(
   const [creatorLpTokenAddress] = await PublicKey.findProgramAddress(
     [
       creator.publicKey.toBuffer(),
-      TOKEN_PROGRAM_ID.toBuffer(),
+      TOKEN_2022_PROGRAM_ID.toBuffer(),
       lpMintAddress.toBuffer(),
     ],
     ASSOCIATED_TOKEN_PROGRAM_ID
@@ -333,7 +332,7 @@ export async function initialize(
       token1Vault: vault1,
       createPoolFee,
       observationState: observationAddress,
-      tokenProgram: TOKEN_PROGRAM_ID,
+      tokenProgram: TOKEN_2022_PROGRAM_ID,
       token0Program: token0Program,
       token1Program: token1Program,
       systemProgram: SystemProgram.programId,
@@ -382,7 +381,7 @@ export async function deposit(
   const [ownerLpToken] = await PublicKey.findProgramAddress(
     [
       owner.publicKey.toBuffer(),
-      TOKEN_PROGRAM_ID.toBuffer(),
+      TOKEN_2022_PROGRAM_ID.toBuffer(),
       lpMintAddress.toBuffer(),
     ],
     ASSOCIATED_TOKEN_PROGRAM_ID
@@ -412,7 +411,7 @@ export async function deposit(
       token1Account: onwerToken1,
       token0Vault: vault0,
       token1Vault: vault1,
-      tokenProgram: TOKEN_PROGRAM_ID,
+      tokenProgram: TOKEN_2022_PROGRAM_ID,
       tokenProgram2022: TOKEN_2022_PROGRAM_ID,
       vault0Mint: token0,
       vault1Mint: token1,
@@ -460,7 +459,7 @@ export async function withdraw(
   const [ownerLpToken] = await PublicKey.findProgramAddress(
     [
       owner.publicKey.toBuffer(),
-      TOKEN_PROGRAM_ID.toBuffer(),
+      TOKEN_2022_PROGRAM_ID.toBuffer(),
       lpMintAddress.toBuffer(),
     ],
     ASSOCIATED_TOKEN_PROGRAM_ID
@@ -490,7 +489,7 @@ export async function withdraw(
       token1Account: onwerToken1,
       token0Vault: vault0,
       token1Vault: vault1,
-      tokenProgram: TOKEN_PROGRAM_ID,
+      tokenProgram: TOKEN_2022_PROGRAM_ID,
       tokenProgram2022: TOKEN_2022_PROGRAM_ID,
       vault0Mint: token0,
       vault1Mint: token1,

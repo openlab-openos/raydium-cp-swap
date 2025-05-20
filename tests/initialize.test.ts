@@ -2,7 +2,7 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program, BN } from "@coral-xyz/anchor";
 import { RaydiumCpSwap } from "../target/types/raydium_cp_swap";
 
-import { getAccount, TOKEN_PROGRAM_ID } from "open-token-web3";
+import { getAccount } from "open-token-web3";
 import { setupInitializeTest, initialize, calculateFee } from "./utils";
 import { assert } from "chai";
 
