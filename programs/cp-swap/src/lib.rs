@@ -20,16 +20,16 @@ solana_security_txt::security_txt! {
 }
 
 #[cfg(feature = "devnet")]
-declare_id!("3aP5TZpYW5Wdjf4KwM2rR2KffgaS5e4wQrxsroMW1j4u");
+declare_id!("swapCpz48CQA1zVD8xXr6e4RGCtZCc9pTDEjQ5cUukr");
 #[cfg(not(feature = "devnet"))]
-declare_id!("3aP5TZpYW5Wdjf4KwM2rR2KffgaS5e4wQrxsroMW1j4u");
+declare_id!("swapCpz48CQA1zVD8xXr6e4RGCtZCc9pTDEjQ5cUukr");
 
 pub mod admin {
     use anchor_lang::prelude::declare_id;
     #[cfg(feature = "devnet")]
-    declare_id!("4eGTvfGud4SMGbgPocbL3RDYy2gk2wb46mLE85XPUeKj");
+    declare_id!("5UEDcM4Tinyyktr43EcE44xnYs7rNJaQkqwim5s1kKpR");
     #[cfg(not(feature = "devnet"))]
-    declare_id!("4eGTvfGud4SMGbgPocbL3RDYy2gk2wb46mLE85XPUeKj");
+    declare_id!("5UEDcM4Tinyyktr43EcE44xnYs7rNJaQkqwim5s1kKpR");
 }
 
 pub mod create_pool_fee_reveiver {
